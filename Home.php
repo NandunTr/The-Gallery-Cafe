@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>The Gallary Café</title>
+
+
+  <!-- Favicons -->
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+#header {
+  top: 0;
+  height: 70px;
+  z-index: 997;
+  transition: all 0.5s;
+  padding: 15px 0;
+  background: rgba(22, 22, 22, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#header.header-transparent {
+  background: transparent;
+  border-bottom: transparent;
+}
+
+#header.header-scrolled {
+  top: 0;
+  background: rgba(22, 22, 22, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#header .logo h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin: 0;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #D59B51;
+}
+
+#header .logo h1 a,
+#header .logo h1 a:hover {
+  color: #D59B51;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px;
+}
+
+/* ── Editorial About Section ── */
+#about.about-editorial {
+  width: 100%;
+  min-height: 80vh;
+  background-color: #161616; /* Deep dark grey/black */
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-editorial-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 0 5%;
+}
+
+.about-editorial-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-subheading {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #D59B51;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.about-editorial-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.2;
+  color: #D59B51;
+  margin: 0 0 30px 0;
+  font-weight: 500;
+}
+
+.about-paragraph {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+.about-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #D59B51;
+  text-decoration: none;
+  border: 1px solid #D59B51;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.about-btn:hover {
+  background-color: rgba(213, 155, 81, 0.1);
+  color: #ffffff;
+}
+
+.about-editorial-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+}
+
+/* The offset golden ring */
+.about-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: -5%;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(213, 155, 81, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.about-circle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 30px 50px rgba(0,0,0,0.5);
+}
+
+.about-nav-arrow {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.about-nav-arrow:hover {
+  border-color: #D59B51;
+  color: #D59B51;
+}
+
+@media (max-width: 991px) {
+  .about-editorial-container {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+  .about-editorial-left {
+    align-items: center;
+    text-align: center;
+  }
+  .about-image-wrapper {
+    max-width: 400px;
+  }
+}
+
+/* ── Editorial Hero Section ── */
+#hero.hero-editorial {
+  width: 100%;
+  height: 100vh;
+  background-color: #25453E; /* Deep forest green */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-editorial-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-editorial-left {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.hero-editorial-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-editorial-right img {
+  width: 120%;
+  max-width: 800px;
+  object-fit: contain;
+  transform: translateX(-10%);
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.4));
+}
+
+.hero-est-text {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-dots {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hero-dot {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.hero-dot.active {
+  background-color: #D59B51;
+  box-shadow: 0 0 0 4px rgba(213, 155, 81, 0.2);
+}
+
+.hero-editorial-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 1.1;
+  margin: 0 0 40px 0;
+  font-weight: 500;
+}
+
+.hero-editorial-left h2 .highlight {
+  color: #D59B51;
+  display: block;
+}
+
+.hero-editorial-left h2 .white {
+  color: #ffffff;
+  display: block;
+}
+
+.hero-subheading {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.hero-paragraph {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 300px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hero-play-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(213, 155, 81, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #D59B51;
+  text-decoration: none;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.hero-play-btn:hover {
+  background-color: rgba(213, 155, 81, 0.1);
+  color: #ffffff;
+}
+
+.hero-bottom-bar {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+.hero-copyright {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-socials a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.hero-socials a:hover {
+  color: #D59B51;
+  border-color: #D59B51;
+}
+
+@media (max-width: 991px) {
+  .hero-editorial-container {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+  }
+  .hero-editorial-right {
+    order: -1;
+    align-items: flex-end;
+  }
+  .hero-editorial-right img {
+    width: 80%;
+    transform: translateX(0);
+    max-height: 40vh;
+  }
+  .hero-editorial-left {
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+  }
+  .hero-paragraph {
+    margin: 0 auto 30px;
+  }
+  .hero-est-text, .hero-dots {
+    display: none;
+  }
+  .hero-bottom-bar {
+    bottom: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+  </style>
+
+ 
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <div class="logo me-auto">
+        <h1><a href="Home.php">The Gallery Café</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      
+      <!-- ======= navigation bar start ======= -->
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+         
+          <li class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+             
+              <li><a href="menu foods.php">Foods</a></li>
+              <li><a href="menu beveragers.php">Beavarages</a></li>
+
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="parking.php">Parking</a></li>
+
+          <li><a class="nav-link scrollto" href="contact.php">Contact Us</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+      <a href="login_customer.php" class="book-a-table-btn scrollto">Login</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero-editorial">
+    
+    <div class="hero-est-text">ESTABLISHED 2026</div>
+
+    <div class="hero-editorial-container">
+      <div class="hero-editorial-left">
+        <h2 class="gsap-hero-title">
+          <span class="highlight">Taste</span>
+          <span class="white">Comes from</span>
+          <span class="white">Nature</span>
+        </h2>
+        <div class="gsap-hero-content">
+          <div class="hero-subheading">EXQUISITE CULINARY ART</div>
+          <p class="hero-paragraph">We craft high-quality culinary experiences to help you savor the best moments and natural flavors.</p>
+          <a href="order.php" class="hero-play-btn"><i class="bi bi-play-fill"></i></a>
+        </div>
+      </div>
+      
+      <div class="hero-editorial-right">
+        <img src="assets/img/hero_gourmet_dish.png" alt="Signature Dish" class="gsap-hero-img">
+      </div>
+    </div>
+
+    <div class="hero-dots">
+      <div class="hero-dot active"></div>
+      <div class="hero-dot"></div>
+      <div class="hero-dot"></div>
+      <div class="hero-dot"></div>
+      <div class="hero-dot"></div>
+    </div>
+
+    <div class="hero-bottom-bar">
+      <div class="hero-copyright">© THE GALLERY CAFE 2026. BY NANDYN</div>
+      <div class="hero-socials">
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-editorial">
+      <div class="about-editorial-container">
+        
+        <div class="about-editorial-left gsap-about-text">
+          <div class="about-subheading">Discover The Gallery Café</div>
+          <h2>Immerse yourself with culinary excellence and elegant culture.</h2>
+          <p class="about-paragraph">
+            Nestled in the heart of the city, the Gallery Café is more than just a place to eat; it’s a celebration of flavor and creativity. Indulge in a diverse menu that boasts a fusion of local and international flavors, crafted with the finest ingredients in an artistic ambiance.
+          </p>
+          <a href="menu foods.php" class="about-btn">Discover More</a>
+        </div>
+
+        <div class="about-editorial-right gsap-about-image">
+          <div class="about-image-wrapper">
+            <img src="assets/img/about_gourmet_dish.png" alt="Gourmet Dish" class="about-circle-img">
+            <a href="#gallery" class="about-nav-arrow"><i class="bi bi-chevron-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Brutalist Gallery Section ======= -->
+    <section id="gallery" class="brutalist-gallery-section">
+      
+      <style>
+        /* ── Brutalist Gallery: Scoped Styles ── */
+        .brutalist-gallery-section {
+          background: #0a0a0a;
+          padding: 80px 0 60px;
+          position: relative;
+        }
+
+        .brutalist-gallery-section .gallery-header-block {
+          text-align: center;
+          margin-bottom: 60px;
+          padding: 0 40px;
+        }
+
+        .brutalist-gallery-section .gallery-header-block .gallery-label {
+          font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+          font-size: 0.65rem;
+          font-weight: 500;
+          letter-spacing: 0.4em;
+          text-transform: uppercase;
+          color: #555;
+          margin-bottom: 14px;
+          display: block;
+        }
+
+        .brutalist-gallery-section .gallery-header-block .gallery-main-title {
+          font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+          font-size: clamp(1.8rem, 4vw, 3.2rem);
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          text-transform: uppercase;
+          color: #fff;
+          line-height: 1.1;
+          margin: 0;
+        }
+
+        .brutalist-gallery-section .gallery-header-block .gallery-main-title span {
+          color: #555;
+        }
+
+        .brutalist-gallery-section .gallery-header-block .gallery-divider {
+          width: 50px;
+          height: 1px;
+          background: #333;
+          margin: 24px auto 0;
+        }
+
+        /* 3-Column Staggered Layout */
+        .brutalist-projects-wrapper {
+          display: flex;
+          gap: 24px;
+          align-items: flex-start;
+          padding: 0 40px;
+          max-width: 1500px;
+          margin: 0 auto;
+        }
+
+        .brutalist-col {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .brutalist-col-left   { padding-top: 0; }
+        .brutalist-col-center { padding-top: 120px; }
+        .brutalist-col-right  { padding-top: 50px; }
+
+        /* Project Item */
+        .brutalist-item {
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          background: #111;
+          opacity: 0;
+          transform: translateY(50px);
+        }
+
+        .brutalist-item.ratio-3-4  { aspect-ratio: 3 / 4; }
+        .brutalist-item.ratio-16-9 { aspect-ratio: 16 / 9; }
+        .brutalist-item.ratio-1-1  { aspect-ratio: 1 / 1; }
+        .brutalist-item.ratio-4-5  { aspect-ratio: 4 / 5; }
+
+        .brutalist-item img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                      filter 0.7s ease;
+          filter: grayscale(20%) brightness(0.88);
+        }
+
+        .brutalist-item:hover img {
+          transform: scale(1.06);
+          filter: grayscale(0%) brightness(1);
+        }
+
+        /* Dark Overlay */
+        .brutalist-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0);
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding: 24px;
+          transition: background 0.5s ease;
+          z-index: 2;
+        }
+
+        .brutalist-item:hover .brutalist-overlay {
+          background: rgba(0, 0, 0, 0.55);
+        }
+
+        .brutalist-overlay .proj-name {
+          font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+          font-size: 0.78rem;
+          font-weight: 600;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: #fff;
+          opacity: 0;
+          transform: translateY(12px);
+          transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        }
+
+        .brutalist-overlay .proj-cat {
+          font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+          font-size: 0.58rem;
+          font-weight: 400;
+          letter-spacing: 0.25em;
+          text-transform: uppercase;
+          color: #aaa;
+          margin-top: 5px;
+          opacity: 0;
+          transform: translateY(12px);
+          transition: opacity 0.4s ease 0.18s, transform 0.4s ease 0.18s;
+        }
+
+        .brutalist-item:hover .proj-name,
+        .brutalist-item:hover .proj-cat {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Corner Brackets */
+        .cb {
+          position: absolute;
+          inset: 0;
+          z-index: 3;
+          pointer-events: none;
+        }
+
+        .cb span {
+          position: absolute;
+          width: 26px;
+          height: 26px;
+          transition: opacity 0.35s ease, transform 0.35s ease;
+          opacity: 0;
+        }
+
+        .cb .tl {
+          top: 12px; left: 12px;
+          border-top: 1.5px solid #fff;
+          border-left: 1.5px solid #fff;
+          transform: translate(-5px, -5px);
+        }
+        .cb .tr {
+          top: 12px; right: 12px;
+          border-top: 1.5px solid #fff;
+          border-right: 1.5px solid #fff;
+          transform: translate(5px, -5px);
+        }
+        .cb .bl {
+          bottom: 12px; left: 12px;
+          border-bottom: 1.5px solid #fff;
+          border-left: 1.5px solid #fff;
+          transform: translate(-5px, 5px);
+        }
+        .cb .br {
+          bottom: 12px; right: 12px;
+          border-bottom: 1.5px solid #fff;
+          border-right: 1.5px solid #fff;
+          transform: translate(5px, 5px);
+        }
+
+        .brutalist-item:hover .cb span {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        /* Counter */
+        .brutalist-counter {
+          position: absolute;
+          top: 12px;
+          right: 14px;
+          font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+          font-size: 0.52rem;
+          font-weight: 500;
+          letter-spacing: 0.15em;
+          color: rgba(255, 255, 255, 0.3);
+          z-index: 4;
+          opacity: 0;
+          transition: opacity 0.35s ease;
+        }
+
+        .brutalist-item:hover .brutalist-counter {
+          opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+          .brutalist-projects-wrapper {
+            padding: 0 20px;
+            gap: 16px;
+          }
+          .brutalist-col { gap: 16px; }
+          .brutalist-col-center { padding-top: 70px; }
+          .brutalist-col-right  { padding-top: 30px; }
+        }
+
+        @media (max-width: 768px) {
+          .brutalist-gallery-section {
+            padding: 60px 0 40px;
+          }
+          .brutalist-gallery-section .gallery-header-block {
+            padding: 0 20px;
+            margin-bottom: 40px;
+          }
+          .brutalist-projects-wrapper {
+            flex-direction: column;
+            padding: 0 16px;
+            gap: 18px;
+          }
+          .brutalist-col { gap: 18px; }
+          .brutalist-col-center,
+          .brutalist-col-right {
+            padding-top: 0;
+          }
+          .cb span { width: 18px; height: 18px; }
+          .brutalist-overlay { padding: 16px; }
+        }
+      </style>
+
+      <!-- Header -->
+      <div class="gallery-header-block">
+        <span class="gallery-label">Our Restaurant</span>
+        <h2 class="gallery-main-title">THE <span>GALLERY</span></h2>
+        <div class="gallery-divider"></div>
+      </div>
+
+      <!-- 3-Column Staggered Grid -->
+      <div class="brutalist-projects-wrapper">
+
+        <!-- COLUMN LEFT -->
+        <div class="brutalist-col brutalist-col-left">
+
+          <div class="brutalist-item ratio-3-4">
+            <a href="assets/img/gallery/1.jpg" class="gallery-lightbox">
+              <img src="assets/img/gallery/1.jpg" alt="Gallery Café Interior">
+            </a>
+            <div class="brutalist-overlay">
+              <span class="proj-name">The Ambiance</span>
+              <span class="proj-cat">Interior / Dining</span>
+            </div>
+            <div class="cb"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+            <span class="brutalist-counter">01</span>
+          </div>
+
+          <div class="brutalist-item ratio-16-9">
+            <a href="assets/img/gallery/2.jpg" class="gallery-lightbox">
+              <img src="assets/img/gallery/2.jpg" alt="Gallery Café Cuisine">
+            </a>
+            <div class="brutalist-overlay">
+              <span class="proj-name">Culinary Art</span>
+              <span class="proj-cat">Food / Plating</span>
+            </div>
+            <div class="cb"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+            <span class="brutalist-counter">02</span>
+          </div>
+
+          <div class="brutalist-item ratio-1-1">
+            <a href="assets/img/gallery/3.jpg" class="gallery-lightbox">
+              <img src="assets/img/gallery/3.jpg" alt="Gallery Café Atmosphere">
+            </a>
+            <div class="brutalist-overlay">
+              <span class="proj-name">Golden Hour</span>
+              <span class="proj-cat">Atmosphere / Light</span>
+            </div>
+            <div class="cb"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+            <span class="brutalist-counter">03</span>
+          </div>
+
+        </div>
+
+        <!-- COLUMN CENTER -->
+        <div class="brutalist-col brutalist-col-center">
+
+          <div class="brutalist-item ratio-1-1">
+            <a href="assets/img/gallery/4.jpg" class="gallery-lightbox">
+              <img src="assets/img/gallery/4.jpg" alt="Gallery Café Kitchen">
+            </a>
+            <div class="brutalist-overlay">
+              <span class="proj-name">Mise en Place</span>
+              <span class="proj-cat">Kitchen / Craft</span>
+            </div>
+            <div class="cb"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+            <span class="brutalist-counter">04</span>
+          </div>
+
+          <div class="brutalist-item ratio-3-4">
+            <a href="assets/img/gallery/5.jpg" class="gallery-lightbox">
+              <img src="assets/img/gallery/5.jpg" alt="Gallery Café Courtyard">
+            </a>
+            <div class="brutalist-overlay">
+              <span class="proj-name">The Courtyard</span>
+              <span class="proj-cat">Outdoor / Seating</span>
+            </div>
+            <div class="cb"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+            <span class="brutalist-counter">05</span>
+          </div>
+
+          <div class="brutalist-item ratio-16-9">
+            <a href="assets/img/gallery/6.jpg" class="gallery-lightbox">
+              <img src="assets/img/gallery/6.jpg" alt="Gallery Café Flavours">
+            </a>
+            <div class="brutalist-overlay">
+              <span class="proj-name">Fusion Flavours</span>
+              <span class="proj-cat">Food / Presentation</span>
+            </div>
+            <div class="cb"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+            <span class="brutalist-counter">06</span>
+          </div>
+
+        </div>
+
+        <!-- COLUMN RIGHT -->
+        <div class="brutalist-col brutalist-col-right">
+
+          <div class="brutalist-item ratio-4-5">
+            <a href="assets/img/gallery/7.jpg" class="gallery-lightbox">
+              <img src="assets/img/gallery/7.jpg" alt="Gallery Café Evening">
+            </a>
+            <div class="brutalist-overlay">
+              <span class="proj-name">Evening Service</span>
+              <span class="proj-cat">Dining / Night</span>
+            </div>
+            <div class="cb"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+            <span class="brutalist-counter">07</span>
+          </div>
+
+          <div class="brutalist-item ratio-1-1">
+            <a href="assets/img/gallery/8.jpg" class="gallery-lightbox">
+              <img src="assets/img/gallery/8.jpg" alt="Gallery Café Art Space">
+            </a>
+            <div class="brutalist-overlay">
+              <span class="proj-name">The Gallery</span>
+              <span class="proj-cat">Art / Space</span>
+            </div>
+            <div class="cb"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+            <span class="brutalist-counter">08</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Brutalist Gallery Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <?php 
+  include 'Footer.php';
+  readfooter(); 
+  ?>
+        <!-- End Footer -->
+  
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- GSAP + ScrollTrigger CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Brutalist Gallery: GSAP ScrollTrigger Init -->
+  <script>
+  (function() {
+    'use strict';
+
+    // Register GSAP plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reveal animation for each gallery item
+    var items = gsap.utils.toArray('.brutalist-item');
+    items.forEach(function(item, index) {
+      gsap.to(item, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 90%',
+          toggleActions: 'play none none none',
+        },
+        delay: (index % 3) * 0.1,
+      });
+    });
+
+    // Subtle parallax on images
+    items.forEach(function(item) {
+      var img = item.querySelector('img');
+      if (img) {
+        gsap.to(img, {
+          yPercent: -6,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        });
+      }
+    });
+
+    // Gallery header reveal
+    var headerBlock = document.querySelector('.gallery-header-block');
+    if (headerBlock) {
+      gsap.from(headerBlock, {
+        opacity: 0,
+        y: 35,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: headerBlock,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      });
+    }
+
+    // Editorial Hero Reveal
+    var heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    
+    heroTl.fromTo('.gsap-hero-title span', 
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.2, delay: 0.3 }
+    )
+    .fromTo('.gsap-hero-content',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8 },
+      "-=0.5"
+    )
+    .fromTo('.gsap-hero-img',
+      { opacity: 0, scale: 0.9, x: 50 },
+      { opacity: 1, scale: 1, x: 0, duration: 1.5, ease: 'power4.out' },
+      "-=1.2"
+    );
+
+    // Editorial About Reveal
+    gsap.fromTo('.gsap-about-text > *', 
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.about-editorial',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+    
+    gsap.fromTo('.gsap-about-image', 
+      { opacity: 0, scale: 0.8, x: 50 },
+      { opacity: 1, scale: 1, x: 0, duration: 1.5, ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.about-editorial',
+          start: 'top 75%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+  })();
+  </script>
+
+</body></html>
